@@ -18,6 +18,7 @@ header {
     height: 10vh;
     margin: auto;
     align-items: center;
+    font-size: 22px;
 }
 
 .logo-container, .nav-links, .cart {
@@ -40,17 +41,19 @@ nav{
 .nav-links{
     justify-content: space-around;
     list-style: none;
+
 }
 
 .nav-link {
     color: #5f5f79;
-    font-size: 18px;
+    font-size: 25px;
     text-decoration: none;
 }
 
 .cart{
     flex: 1;
     justify-content: flex-end;
+    padding-right: 30px;
 }
 
 .presentation{
@@ -104,10 +107,12 @@ nav{
 }
 .cover{
     flex: 1;
+    height: 60vh;
 }
 .cover img{
-    height: 60vh;
+    height: 100%;
     filter: drop-shadow(0px 5px  3px black);
+    animation: drop 1.5s ease;
 }
 
 .big-circle {
@@ -134,4 +139,72 @@ nav{
     left: 20%;
     opacity: 0.6;
     z-index: -1;
+}
+
+.laptop-select{
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    right: 20%;
+}
+
+@keyframes drop{
+    0%{
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .presentation{
+        flex-direction: column;
+    }
+
+    .introduction{
+        margin-top: 5vh;
+        text-align: center;
+    }
+
+    .intro-text h1{
+        font-size: 30px;
+    }
+
+    .intro-text p{
+        font-size: 18px;
+    }
+
+    .cta{
+        padding: 10px 0 0 0;
+    }
+
+    .cta-add{
+        margin-top: 20px;
+        width: 50%;
+        margin: auto;
+    }
+    .laptop-select{
+        bottom: 5%;
+        right: 50%;
+        width: 50px;
+        transform: translate(50%, 5%);
+    }
+
+    .cover img{
+        height: 80%;
+    }
+
+    .cover {
+        width: 100%;
+        margin: auto;
+    }
+
+    .small-circle, .medium-circle, .small-circle {
+        opacity: 0.1;
+    }
 }
